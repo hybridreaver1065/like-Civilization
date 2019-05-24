@@ -6,6 +6,8 @@ public class Square extends JButton {
 	
 	private boolean occupied = false;
 	
+	private Unit occupier;
+	
 	public Square() {
 	setSize(squaresize,squaresize);
 
@@ -15,5 +17,8 @@ public class Square extends JButton {
 	
 	public boolean isOccupied() {return occupied;}
 	
-	public void setOccupy(boolean is) {occupied = is;}
+	public void Occupy() {occupied = true;}
+	public void unOccupy() {occupied = true;}
+	
+	public String toString() {return "" +occupier+"\n"+ occupier.getHealth()+"\n"+ occupier.getMove() ;}
 }

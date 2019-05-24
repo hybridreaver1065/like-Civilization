@@ -3,6 +3,9 @@ public abstract class Unit {
 
 	private String team = "neutral";
 	
+	
+	private boolean isDead = false;
+	
 	private int health;
 	private int armor;
 	private int move;
@@ -59,4 +62,34 @@ public abstract boolean canClimb();
  
  public String getTeam() {return team;}
  public void setTeam(String t) {team = t;} 
+ 
+ 
+ //Gameplay elements
+ 
+ public boolean takeDamage(int damage) {
+	 
+	 health -= damage;
+	 
+	 if (health> 0) 
+		 return isDead();
+	 else 
+		 return false;
+	 }
+ 
+ public String attack1(Unit A, Unit B) {
+	 
+	B.takeDamage( (B.getHealth() - (B.getArmor() - A.getDamage1()) * A.getAttacks1()));
+	
+	return ""+B.getHealth()+B.isDead();
+	 
+ }
+
+public boolean isDead() {
+	return isDead;
+}
+
+public void setDead(boolean isDead) {
+	this.isDead = isDead;
+}
+ 
 }

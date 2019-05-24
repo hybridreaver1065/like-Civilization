@@ -26,9 +26,6 @@ public class DayFrame extends JFrame {
 		overall.setLayout(cl);
 		
 		JPanel ellis = new Field();
-		ellis.add(new JLabel("This is The Field"));
-		JButton button1= new JButton("Button 1");
-		ellis.add(button1);
 		
 		
 		
@@ -40,7 +37,7 @@ public class DayFrame extends JFrame {
 	
 		
 		JPanel card3 = new JPanel();
-		card3.add(new JLabel("This is Nothing"));
+		card3.add(new JLabel("This is how the game's played"));
 		JButton button3= new JButton("Button 3");
 		card3.add(button3);
 		
@@ -55,15 +52,7 @@ public class DayFrame extends JFrame {
 		setVisible(true);
 		setDefaultCloseOperation(this.EXIT_ON_CLOSE);
 		
-		button1.addActionListener(new ActionListener() {
-			
-
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				// TODO Auto-generated method stub
-			cl.show(overall, "panel 2");	
-			}
-		});
+		
 		
 		
 button2.addActionListener(new ActionListener() {
