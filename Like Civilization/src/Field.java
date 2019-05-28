@@ -1,21 +1,72 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 public class Field extends JPanel {
 
 	private Unit[][] unitField;
 	private Terrain[][] terrainField;
 	private Square[][] squares;
+	private JLabel unitSelected;
 	
-	JLabel unitSelected;
+	private JComboBox order;
+	private JButton confirm;
+	
+	
 	
 	public Field() {
 		
+		
+		order = new JComboBox();
+		
+		order.addItem("Attack");
+		order.addItem("Wait");
+		order.addItem("Move");
+		
+		confirm = new JButton("Confirm");
+		
+		
+		
+		confirm.addActionListener(new ActionListener() {
+			
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				if(order.getSelectedItem().equals("Move")) {
+					//(selected occupier) to (selected occupier)
+				}
+				else if(order.getSelectedItem().equals("Attack")) {
+					
+				}
+				else if(order.getSelectedItem().equals("Wait")) {
+					
+				}
+				
+			}
+		});
+		
+		
+		
+		
+		
+		
+		
 		setBounds(100,100,500,500);
 		setLayout(null);
+		
+		
+		
+		unitSelected = new JLabel();
+		unitSelected.setBounds((new Square().squaresize()) *3, 6* (new Square().squaresize()), 100, 100);
+		add(unitSelected);
+		setVisible(true);
+		
 		
 	 unitField = new Unit[5][5];
 	for (int r = 0; r < 5; r++)
@@ -33,7 +84,7 @@ public class Field extends JPanel {
 	
 	//Make an array of buttons
 	
-	unitSelected = new JLabel();
+	
 	
 	
 	squares = new Square[5][5];
@@ -49,7 +100,7 @@ public class Field extends JPanel {
 				@Override
 				public void actionPerformed(ActionEvent arg0) {
 					// TODO Auto-generated method stub
-					unitSelected.setText(toString());	
+					//?? unitSelected.setText(squares[r][c].toString());	
 				}
 			});
 			
@@ -64,6 +115,23 @@ public class Field extends JPanel {
 		
 		}
 			
+	
+	
+	}
+	
+	
+	public boolean move(int r, int c, int x, int y) {
+		if (squares[r + x][c+y].isOccupied())
+			return false;
+		else if (!squares[r][c].getOccupier().canClimb() && terrainField[r+x][c+y].getisMountain())
+			return false;
+		
+			squares[r+x][c+y].setOccupier(squares[r][c].getOccupier()); 
+			squares[r][c].setOccupier(null);
+			squares[r+x][c+y].Occupy();
+			squares[r][c].unOccupy();
+		
+		return true;
 	}
 	
 

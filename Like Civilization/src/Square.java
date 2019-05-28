@@ -20,5 +20,14 @@ public class Square extends JButton {
 	public void Occupy() {occupied = true;}
 	public void unOccupy() {occupied = true;}
 	
+	
 	public String toString() {return "" +occupier+"\n"+ occupier.getHealth()+"\n"+ occupier.getMove() ;}
+
+	public Unit getOccupier() {
+		return occupier;
+	}
+
+	public void setOccupier(Unit occ) {
+		occupier = occ;
+	}
 }

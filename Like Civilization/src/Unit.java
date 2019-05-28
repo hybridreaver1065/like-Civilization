@@ -76,11 +76,11 @@ public abstract boolean canClimb();
 		 return false;
 	 }
  
- public String attack1(Unit A, Unit B) {
+ public String attack1(Unit attacker, Unit hurt) {
 	 
-	B.takeDamage( (B.getHealth() - (B.getArmor() - A.getDamage1()) * A.getAttacks1()));
+	hurt.takeDamage( (hurt.getHealth() - (hurt.getArmor() - attacker.getDamage1()) * attacker.getAttacks1()));
 	
-	return ""+B.getHealth()+B.isDead();
+	return ""+hurt.getHealth()+hurt.isDead();
 	 
  }
 

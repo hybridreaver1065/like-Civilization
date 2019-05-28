@@ -12,6 +12,8 @@ public class DayFrame extends JFrame {
 
 	
 	public DayFrame() {
+		
+		
 		JMenuBar MenuBar = new JMenuBar();
 	
 	
@@ -26,6 +28,7 @@ public class DayFrame extends JFrame {
 		overall.setLayout(cl);
 		
 		JPanel ellis = new Field();
+		
 		
 		
 		
