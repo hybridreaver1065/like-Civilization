@@ -21,7 +21,7 @@ public class Order extends JPanel{
 	
 	public Order() {
 	setSize(200,150);
-	//Use gridbag layout to keep it simple
+	//Use gridbag layout to keep it simple?
 	
 	setLayout(null);
 	

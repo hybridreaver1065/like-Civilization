@@ -3,11 +3,11 @@ public class ATTank extends LandVehicle {
 
 	public ATTank() {
 		
-		setRange1(1);
-		setRange2(2);
-		setDamage1(1);
-		setDamage2(2);
-		setAttacks1(3);
-		setAttacks2(1);
+		setRange1(2);
+		setRange2(1);
+		setDamage1(3);
+		setDamage2(1);
+		setAttacks1(1);
+		setAttacks2(3);
 	}
 }

@@ -1,25 +1,75 @@
 import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
 import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 public class DayFrame extends JFrame {
-
+	private String teamTurn;
+	
 	
 	public DayFrame() {
+
 		
 		
+		
+		
+		//End Turn
+		teamTurn = "R";
 		JMenuBar MenuBar = new JMenuBar();
-	
-	
-	
-	this.setJMenuBar(MenuBar);
 		
+		
+		JMenuItem endturn = new JMenuItem("End Turn");
+		
+		MenuBar.add(endturn);
+		this.setJMenuBar(MenuBar);
+			endturn.addActionListener(new ActionListener() { 
+				
+				public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				if (teamTurn.equals("R"))
+					teamTurn = "B";
+					else if (teamTurn.equals("B"))
+						teamTurn = "R";
+			}
+			});
+		
+	
+	
+	
+		//End of End Turn
+		
+		//setting field	
+		ArrayList<Square> teamB= new ArrayList<Square>();
+		ArrayList<Square> teamR= new ArrayList<Square>();
+
+		//If team R, append r coordinates, if B append B coordinates		
+		
+		for (int r = 0; r < 5; r++)
+			for (int c = 0; c < 5; c++) 
+			{}		
+		//livingR
+		//livingB
+		
+		
+		//end of setting field
+		
+		//Start turn
+		
+		
+		
+		//Set living to units to move depending on team
+		
+		
+		
+		//End of start turn
 	
 	
 	JPanel overall = new  JPanel();
