@@ -24,10 +24,6 @@ public class Field extends JPanel {
 		
 		order = new JComboBox();
 		
-		order.addItem("Attack");
-		order.addItem("Wait");
-		order.addItem("Move");
-		
 		confirm = new JButton("Confirm");
 		
 		
